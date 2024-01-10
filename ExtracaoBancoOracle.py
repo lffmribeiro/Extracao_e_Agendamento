@@ -3,8 +3,6 @@ import oracledb
 import dotenv 
 import os
 
-#colocar o gitignore na pasta 
-
 class ExtracaoBancoOracle:
     def __init__(self, caminhoSQL_TXT, nomeTXT_SQL, caminhoSalvarArquivo, nomeArquivo):
         #caminho do arquivo SQL/TXT
@@ -33,7 +31,7 @@ class ExtracaoBancoOracle:
             self.df = pd.read_sql(self.query, conexao)
         return self.df
 
-    def limparExtracaoAnterior(self): #Talvez não será necessária
+    def limparExtracaoAnterior(self):
         if os.path.exists(self.pathSalvar):
             os.remove(self.pathSalvar)
 
