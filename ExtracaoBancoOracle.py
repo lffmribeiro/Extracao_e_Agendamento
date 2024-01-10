@@ -36,7 +36,7 @@ class ExtracaoBancoOracle:
             os.remove(self.pathSalvar)
 
     def salvarDataFrame(self):
-        self.df.to_csv(self.pathSalvar, sep=';')
+        self.df.to_csv(self.pathSalvar, sep=';', index=False)
 
     def extrairSalvarArquivo(self):
         self.lerArquivoSQL_TXT()
